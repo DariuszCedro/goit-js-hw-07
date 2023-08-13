@@ -4,9 +4,9 @@ const list = document.querySelector(".gallery");
 
 const galleryArray = [];
 for (let i = 0; i < galleryItems.length; i++) {
-  const divBox = document.createElement("div");
-  divBox.classList.add("gallery__item");
+  const divBox = document.createElement("li");
   divBox.innerHTML = `
+  <div class="gallery__item">
   <a class="gallery__link" href=${galleryItems[i].original}>
     <img
       class="gallery__image"
@@ -15,7 +15,7 @@ for (let i = 0; i < galleryItems.length; i++) {
       alt="${galleryItems[i].description}"
     />
   </a>
-  `;
+  </div>`;
   galleryArray.push(divBox);
 }
 list.append(...galleryArray);
