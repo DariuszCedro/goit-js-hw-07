@@ -22,10 +22,13 @@ list.append(...galleryArray);
 
 list.addEventListener("click", (event) => {
   event.preventDefault();
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
   const showImg = event.target.dataset.source;
   const instance = basicLightbox.create(`
     <img src=${showImg}>
 `);
-
+  console.log(event.target.nodeName);
   instance.show();
 });

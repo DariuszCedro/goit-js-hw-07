@@ -19,9 +19,8 @@ for (let i = 0; i < galleryItems.length; i++) {
   galleryArray.push(aLink);
 }
 list.append(...galleryArray);
-
-list.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  var instance = new SimpleLightbox(`.gallery a`);
+var instance = new SimpleLightbox(`.gallery a`, {
+  captionPosition: "outside",
+  captionsData: "alt",
+  captionDelay: 250,
 });
